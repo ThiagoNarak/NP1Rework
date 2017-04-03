@@ -6,94 +6,110 @@ public class AgendamentoVoo {
     private static Date date = new Date();
 
     public static void main(String[] args) {
+        Compania[] aeronave = new Voo [3];
+
 
         System.out.println("MENU");
-        System.out.println("a- Comprar passagem");  /*
-        ESCOLHER ORIGEM DESTINO.
-        ESCOLHER DATA DO VOO.
-        ESCOLHER CLASSE ECONOMY,FIRSTCLASS,BUSINESS
-        */
-        switch (menu){
-            case 1:
-                System.out.println("digite origem");
-                System.out.println("digite destino");
-                System.out.println("digite a classe");
-                System.out.println("1-FirstClass");
-                System.out.println("2-Business");
-                System.out.println("3-Economy");
-                switch (classe){
-                    case 1:
-                        break;
-                    case 1: break;
-                    case 1: break;
-                }
-                break;
+        //comprar passagem.
+        comprarPassagem();
+        //verificar voos disponiveis - mostrar voos para data e origem-destino especifica
+        verificarVoosDisponiveis();
+        //mostrar assentos do voo disponivel no horario X
+        imprimirAssentos();
+        //digitar o nome sobrenome cpf
+        cadastrarPassageiro();
+        //printar cartao de embarque com informacoes do voo e passageiro
+        emitirCartaoDeEmbarque();
+        //cadastrar tripulação no Voo
+        configurarVoo();
 
-            case 1: break;
-            case 1: break;
-            case 1: break;
-            case 1: break;
-        }
-        System.out.println("b- Verificar voos disponiveis");
-        /*
-        imprimir voos disponiveis da compania com hora e valor
-        */
-        System.out.println("d- Mos dos assentos");
-        /*
-        mostrar assentos da classe determinada para voo X horario X
-         */
-        System.out.println("f- Cadastrar passageiros");
-        /*
-        digitar o nome sobrenome cpf
-         */
-        System.out.println("e- Emititrar catao de embarque");
-        /*
-        nome cia
-        origem destino
-        classe
-        prioridade
-        data horario
-        setor aeroporto: setor 1
-        embarque portao 1
+        //imprimir todos os passageiros do voo.
+        passageirosVoo();
 
-         */
-        System.out.println("c- Configurar Voo");
-        /*
-        Escolher escolher a tribulação para esse voo especifico
-         */
-        System.out.println("j- Imprimir passageiros do voo (EXTRA)");
-        /*
-        Imprimir todos os passageiros desse voo
-
-        */
-        System.out.println("i- Cancelamento da viagem (EXTRA)");
-
-        /*
-        * supondo que seja o passageiro que queira cancelar a viagem e não toda o voo
-        * cancelar viagem do passageiro
-        * */
-        System.out.println("g- Cadatrar tripulantes");
+        //cancelar passagem do passageiro x cadeira x VOO x
+        cancelarPassagem();
     }
 
     public static void comprarPassagem(){
         String origem;
-
-
+        String destino;
         System.out.print("Digite Origem: ");
         origem = input.nextLine();
+        System.out.println("Digite Destino");
+        destino = input.nextLine();
         System.out.print("Digite Data.\n");
-        System.out.print("Dia: ");
+        System.out.println("Dia");
         int dia=input.nextInt();
+        System.out.println("Mes");
         int mes = input.nextInt();
+        System.out.println("Ano");
         int ano = input.nextInt();
         date = new Date(ano-1900,mes,dia);
-
-
         System.out.print("Escolha a Classe do Voo:\n" +
-                            "1 - Primeira Classe.\n" +
-                            "2 - Classe Executiva.\n" +
-                            "3 - Economica\n");
+                "1 - Primeira Classe.\n" +
+                "2 - Classe Executiva.\n" +
+                "3 - Economica\n");
+        int classe= input.nextInt();
+        switch (classe){
+            case 1:
+                System.out.println("Primeira classe selecionada.");
+
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+
+
+
+
     }
-
-
+    public static void verificarVoosDisponiveis(){
+        /*
+        chamar classe compania e metodos imprimir voos com hora e valor
+        escolha o horario do voo.
+         */
+    }
+    public static void imprimirAssentos(){
+        /*
+            imprimir mapa de assentos para classe do cliente escolheu no ato da compra.
+         */
+    }
+    public static void cadastrarPassageiro(){
+        String nome,sobrenome,cpf;
+        System.out.println("digite nome.");
+        nome=input.nextLine();
+        System.out.println("digite sobrenome.");
+        sobrenome=input.nextLine();
+        System.out.println("digite cpf.");
+        cpf=input.nextLine();
+    }
+    public static void emitirCartaoDeEmbarque(){
+        System.out.println("nome: ");
+        System.out.println("origem-destino");
+        System.out.println("classe");
+        System.out.println("prioridade");
+        System.out.println("data");
+        System.out.println("hora");
+        System.out.println("terminal");
+        System.out.println("portao do terminal");
+//        nome cia
+//        origem destino
+//        classe
+//                prioridade
+//        data horario
+//        setor aeroporto: setor 1
+//        embarque portao 1
+    }
+    public static void configurarVoo(){
+        //set piloto set copiloto e 4 tripulantes.
+    }
+    public static void passageirosVoo(){
+        //imprimir passageiros do voo
+    }
+    public static void cancelarPassagem(){
+        //cancelar passagem,
+        //cancelar cadeira, cancelar pessoa
+    }
 }
