@@ -1,9 +1,11 @@
-/**
- * Created by thiago on 03/04/2017.
- */
+import java.util.Date;
+import java.util.Scanner;
 public class AgendamentoVoo {
-    public static void main(String[] args) {
 
+    private static Scanner input = new Scanner(System.in);
+    private static Date date = new Date();
+
+    public static void main(String[] args) {
 
         System.out.println("MENU");
         System.out.println("a- Comprar passagem");  /*
@@ -44,7 +46,7 @@ public class AgendamentoVoo {
         /*
         digitar o nome sobrenome cpf
          */
-        System.out.println("e- Emititrar mapar catao de embarque");
+        System.out.println("e- Emititrar catao de embarque");
         /*
         nome cia
         origem destino
@@ -56,10 +58,42 @@ public class AgendamentoVoo {
 
          */
         System.out.println("c- Configurar Voo");
+        /*
+        Escolher escolher a tribulação para esse voo especifico
+         */
         System.out.println("j- Imprimir passageiros do voo (EXTRA)");
+        /*
+        Imprimir todos os passageiros desse voo
+
+        */
         System.out.println("i- Cancelamento da viagem (EXTRA)");
 
+        /*
+        * supondo que seja o passageiro que queira cancelar a viagem e não toda o voo
+        * cancelar viagem do passageiro
+        * */
         System.out.println("g- Cadatrar tripulantes");
-
     }
+
+    public static void comprarPassagem(){
+        String origem;
+
+
+        System.out.print("Digite Origem: ");
+        origem = input.nextLine();
+        System.out.print("Digite Data.\n");
+        System.out.print("Dia: ");
+        int dia=input.nextInt();
+        int mes = input.nextInt();
+        int ano = input.nextInt();
+        date = new Date(ano-1900,mes,dia);
+
+
+        System.out.print("Escolha a Classe do Voo:\n" +
+                            "1 - Primeira Classe.\n" +
+                            "2 - Classe Executiva.\n" +
+                            "3 - Economica\n");
+    }
+
+
 }
